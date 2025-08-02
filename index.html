@@ -12,11 +12,11 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background-color: #121212;
+            background-color: #0d0d0d;
             color: #e0e0e0;
         }
         header {
-            background-color: #1f1f1f;
+            background-color: #1a1a1a;
             color: white;
             padding: 2rem 1rem;
             text-align: center;
@@ -25,39 +25,58 @@
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+            color: #00ccff;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #1f1f1f;
+            background-color: #1a1a1a;
             padding: 0.5rem;
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid #333;
         }
-        nav a {
-            color: white;
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-links a {
+            color: #a0a0a0;
             text-decoration: none;
             padding: 0.75rem 1.5rem;
-            transition: background-color 0.3s;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
         }
-        nav a:hover {
-            background-color: #555;
+        .nav-links a:hover {
+            background-color: #2a2a2a;
+            color: #00ccff;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #00ccff;
+            cursor: pointer;
+            z-index: 1001;
         }
         section {
             padding: 2rem;
             margin: 1rem auto;
             max-width: 800px;
-            background-color: #1f1f1f;
+            background-color: #1a1a1a;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
             scroll-margin-top: 70px;
         }
         h2 {
-            border-bottom: 2px solid #00aaff;
+            border-bottom: 2px solid #00ccff;
             padding-bottom: 0.5rem;
-            color: #00aaff;
+            color: #00ccff;
         }
         .socials {
             text-align: center;
@@ -69,7 +88,7 @@
             border-radius: 5px;
             text-decoration: none;
             color: white;
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.3s;
         }
         .socials a:hover {
             transform: translateY(-3px);
@@ -79,25 +98,31 @@
         .reddit { background-color: #ff4500; }
 
         #contact a {
-            color: #00aaff;
+            color: #00ccff;
             text-decoration: none;
         }
         #contact a:hover {
             text-decoration: underline;
         }
         .support-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: #00aaff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
+            background-color: #007BFF;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            text-align: center;
-            transition: background-color 0.3s;
+            transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+            box-sizing: border-box;
         }
         .support-button:hover {
-            background-color: #0088cc;
+            background-color: #0056b3;
+            transform: translateY(-3px);
         }
         .skills-list {
             list-style: none;
@@ -107,22 +132,82 @@
             gap: 1rem;
         }
         .skills-list li {
-            background-color: #333;
+            background-color: #2a2a2a;
             padding: 0.5rem 1rem;
             border-radius: 5px;
+            color: #00ccff;
         }
         .project {
             margin-bottom: 2rem;
         }
         .project h3 {
-            color: #00aaff;
+            color: #00ccff;
         }
         footer {
             text-align: center;
             padding: 1rem;
-            background-color: #1f1f1f;
+            background-color: #1a1a1a;
             border-top: 1px solid #333;
             margin-top: 2rem;
+            color: #a0a0a0;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            }
+            .nav-links.active {
+                display: flex;
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .hamburger {
+                display: block;
+            }
+            section {
+                scroll-margin-top: 55px;
+            }
+
+            .socials a,
+            .support-button {
+                transition: none !important;
+                transform: none !important;
+            }
+
+            
+
+            .socials a:active,
+            .support-button:active {
+                background-color: var(--button-color) !important; /* This will be overridden by specific classes */
+                outline: none !important;
+                box-shadow: none !important;
+            }
+            .youtube:active { background-color: #ff0000 !important; }
+            .github:active { background-color: #333 !important; }
+            .reddit:active { background-color: #ff4500 !important; }
+            .support-button:active {
+                background-color: #007BFF !important;
+            }
+        }
+	
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .socials a {
+                display: block;
+                margin: 0.5rem 0;
+            }
         }
     </style>
 </head>
@@ -130,13 +215,16 @@
     <header>
         <h1>Uranium Forest</h1>
     </header>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#socials">Socials</a>
-        <a href="#contact">Contact Me</a>
-        <a href="#support">Support Me</a>
+        <nav>
+        <button class="hamburger"><i class="fas fa-bars"></i></button>
+        <div class="nav-links">
+            <a href="#about">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#socials">Socials</a>
+            <a href="#contact">Contact Me</a>
+            <a href="#support">Support Me</a>
+        </div>
     </nav>
     <section id="about">
         <h2>About Me</h2>
@@ -186,10 +274,24 @@
     <section id="support" style="text-align: center;">
         <h2>Support Me</h2>
         <p>If you like my work, consider supporting me!</p>
-        <a href="#" class="support-button">Donate</a>
+        <a href="https://buymeacoffee.com/uraniumforest" target="_blank" class="support-button">Donate</a>
     </section>
     <footer>
         <p>&copy; 2025 Uranium Forest</p>
     </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
