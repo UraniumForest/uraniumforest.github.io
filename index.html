@@ -1,45 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-d">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uranium Forest</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         body {
-            font-family: sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #121212;
+            color: #e0e0e0;
         }
         header {
-            background-color: #333;
+            background-color: #1f1f1f;
             color: white;
-            padding: 1rem;
+            padding: 2rem 1rem;
             text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
+            background-color: #1f1f1f;
             padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
         }
         nav a {
             color: white;
             text-decoration: none;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
+            transition: background-color 0.3s;
         }
         nav a:hover {
             background-color: #555;
         }
         section {
             padding: 2rem;
-            margin: 0 auto;
+            margin: 1rem auto;
             max-width: 800px;
-            background-color: white;
-            margin-top: 1rem;
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         h2 {
-            border-bottom: 2px solid #333;
+            border-bottom: 2px solid #00aaff;
             padding-bottom: 0.5rem;
+            color: #00aaff;
         }
         .socials {
             text-align: center;
@@ -47,14 +61,39 @@
         .socials a {
             display: inline-block;
             margin: 0.5rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid #ccc;
+            padding: 0.8rem 1.2rem;
             border-radius: 5px;
             text-decoration: none;
-            color: #333;
+            color: white;
+            transition: transform 0.2s;
         }
         .socials a:hover {
-            background-color: #eee;
+            transform: translateY(-3px);
+        }
+        .youtube { background-color: #ff0000; }
+        .github { background-color: #333; }
+        .reddit { background-color: #ff4500; }
+
+        #contact a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+        #contact a:hover {
+            text-decoration: underline;
+        }
+        .support-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #00aaff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .support-button:hover {
+            background-color: #0088cc;
         }
     </style>
 </head>
@@ -66,6 +105,7 @@
         <a href="#about">About Me</a>
         <a href="#socials">Socials</a>
         <a href="#contact">Contact Me</a>
+        <a href="#support">Support Me</a>
     </nav>
     <section id="about">
         <h2>About Me</h2>
@@ -74,13 +114,18 @@
     </section>
     <section id="socials" class="socials">
         <h2>Socials</h2>
-        <a href="https://www.youtube.com/@serafi555" target="_blank">YouTube</a>
-        <a href="https://github.com/UraniumForest" target="_blank">GitHub</a>
-        <a href="https://www.reddit.com/user/Uranium-Forest" target="_blank">Reddit</a>
+        <a href="https://www.youtube.com/@serafi555" target="_blank" class="youtube"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://github.com/UraniumForest" target="_blank" class="github"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.reddit.com/user/Uranium-Forest" target="_blank" class="reddit"><i class="fab fa-reddit-alien"></i> Reddit</a>
     </section>
     <section id="contact">
         <h2>Contact Me</h2>
         <p>You can reach me at: <a href="mailto:uraniumforest@gmail.com">uraniumforest@gmail.com</a></p>
+    </section>
+    <section id="support" style="text-align: center;">
+        <h2>Support Me</h2>
+        <p>If you like my work, consider supporting me!</p>
+        <a href="#" class="support-button">Donate</a>
     </section>
 </body>
 </html>
