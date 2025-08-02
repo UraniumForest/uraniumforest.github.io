@@ -95,6 +95,31 @@
         .support-button:hover {
             background-color: #0088cc;
         }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .skills-list li {
+            background-color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        .project {
+            margin-bottom: 2rem;
+        }
+        .project h3 {
+            color: #00aaff;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1f1f1f;
+            border-top: 1px solid #333;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -103,6 +128,8 @@
     </header>
     <nav>
         <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
         <a href="#socials">Socials</a>
         <a href="#contact">Contact Me</a>
         <a href="#support">Support Me</a>
@@ -111,6 +138,30 @@
         <h2>About Me</h2>
         <p>I'm an IT professional with knowledge of networking, systems, and data security. I understand how the main internet protocols work, including IP, TCP, UDP, DNS, HTTP, HTTPS, FTP, SFTP, SSH, and more.</p>
         <p>I use tools like Proxmox, pfSense, nftables, and Fail2Ban, and manage systems running Linux and Windows Server. I also work with PostgreSQL databases.</p>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>Networking (IP, TCP, UDP, DNS, HTTP, HTTPS)</li>
+            <li>Security (FTP, SFTP, SSH, nftables, Fail2Ban)</li>
+            <li>Virtualization (Proxmox)</li>
+            <li>Firewalls (pfSense)</li>
+            <li>Operating Systems (Linux, Windows Server)</li>
+            <li>Databases (PostgreSQL)</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>A brief description of your first project. What was the goal? What technologies did you use? What was the outcome?</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>A brief description of your second project. What was the goal? What technologies did you use? What was the outcome?</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
     </section>
     <section id="socials" class="socials">
         <h2>Socials</h2>
@@ -127,5 +178,8 @@
         <p>If you like my work, consider supporting me!</p>
         <a href="#" class="support-button">Donate</a>
     </section>
+    <footer>
+        <p>&copy; 2025 Uranium Forest</p>
+    </footer>
 </body>
 </html>
