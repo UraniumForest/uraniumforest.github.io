@@ -176,7 +176,7 @@
             section {
                 scroll-margin-top: 55px;
             }
-
+/*
             .socials a,
             .support-button {
                 transition: none !important;
@@ -190,6 +190,7 @@
             .support-button:active {
                 background-color: #007BFF !important;
             }
+*/
         }
 	
         @media (max-width: 480px) {
@@ -202,6 +203,15 @@
                 margin: 0.5rem 0;
             }
         }
+        @media (hover: none) and (pointer: coarse) {
+            .socials a:hover,
+            .support-button:hover {
+                background-color: inherit !important;
+                color: inherit !important;
+                transform: none !important;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -243,7 +253,7 @@
         <div class="project">
             <h3>Batch Multi-Tool Script</h3>
             <p>A comprehensive batch script that provides a menu-driven interface for various utilities, including a calculator for basic arithmetic operations, a Fibonacci sequence generator, a secure password generator, and a tool to find the most expensive product in a CSV file. The script also allows for terminal color customization.</p>
-            <a href="slliteres_superaplicacio.bat" target="_blank">View Script (Catalan)</a>
+            <a href="multi-tool.bat" target="_blank">View Script (Catalan)</a>
         </div>
         <div class="project">
             <h3>Automated Certificate Renewal</h3>
