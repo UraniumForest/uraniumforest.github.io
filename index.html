@@ -51,10 +51,6 @@
             display: block;
             transition: background-color 0.3s, color 0.3s;
         }
-        .nav-links a:hover {
-            background-color: #2a2a2a;
-            color: #00ccff;
-        }
         .hamburger {
             display: none;
             font-size: 1.5rem;
@@ -90,9 +86,6 @@
             color: white;
             transition: transform 0.2s, background-color 0.3s;
         }
-        .socials a:hover {
-            transform: translateY(-3px);
-        }
         .youtube { background-color: #ff0000; }
         .github { background-color: #333; }
         .reddit { background-color: #ff4500; }
@@ -109,7 +102,7 @@
             justify-content: center;
             align-items: center;
             padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-bottom: 1.15rem;
             padding-right: 2rem;
             padding-left: 2rem;
             background-color: #007BFF;
@@ -119,10 +112,6 @@
             font-weight: bold;
             transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
             box-sizing: border-box;
-        }
-        .support-button:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
         }
         .skills-list {
             list-style: none;
@@ -152,6 +141,20 @@
             color: #a0a0a0;
         }
 
+	@media (min-width: 769px) {
+            .nav-links a:hover {
+                background-color: #2a2a2a;
+                color: #00ccff;
+            }
+            .support-button:hover {
+                background-color: #0056b3;
+                transform: translateY(-3px);
+            }
+            .socials a:hover {
+                transform: translateY(-3px);
+            }
+        }
+        
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
@@ -176,22 +179,8 @@
             section {
                 scroll-margin-top: 55px;
             }
-
-            .socials a,
-            .support-button {
-                transition: none !important;
-                transform: none !important;
-            }
-
-            .youtube:active { background-color: #ff0000 !important; }
-            .github:active { background-color: #333 !important; }
-            .reddit:active { background-color: #ff4500 !important; }
-            .support-button:active {
-                background-color: #007BFF !important;
-            }
-
         }
-	
+
         @media (max-width: 480px) {
             header h1 {
                 font-size: 1.5rem;
